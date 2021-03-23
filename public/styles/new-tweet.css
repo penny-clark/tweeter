@@ -20,17 +20,21 @@
   font-family: 'Bungee', sans-serif;
 }
 
-.tweet-text {
+tweet-text {
   font-family: 'Source Sans Pro', sans-serif;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  /* flex-direction: column;
+  justify-content: center; */
+  width: 90%;
   border-bottom: 2px solid  black;
 }
 
-.textarea {
+textarea {
   font-family: 'Source Sans Pro', sans-serif;
-  outline: none;
   border: none;
-  border-bottom: 2px solid red;
+  border-bottom: solid;
+  box-sizing: content-box;
+  width: 100%;
+  
+  
 }
