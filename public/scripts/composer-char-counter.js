@@ -1,0 +1,1 @@
+console.log("here I am! The composer char counter!")
