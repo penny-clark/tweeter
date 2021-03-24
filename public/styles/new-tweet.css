@@ -20,11 +20,14 @@
   font-family: 'Bungee', sans-serif;
 }
 
+.overcount {
+  font-family: 'Bungee', sans-serif;
+  color:crimson;
+}
+
 tweet-text {
   font-family: 'Source Sans Pro', sans-serif;
   display: flex;
-  /* flex-direction: column;
-  justify-content: center; */
   width: 90%;
   border-bottom: 2px solid  black;
 }
@@ -36,6 +39,4 @@ textarea {
   box-sizing: content-box;
   width: 100%;
   background-color: #f4f1ec;
-  
-  
 }

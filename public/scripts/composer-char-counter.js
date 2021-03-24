@@ -8,14 +8,18 @@ $(document).ready(function() {
 
 });
 
+//TO DO: access counter class with recursion instead of directly
 const onKeyUp = function () {
+  let charLimitCount;
   const charLength = $(this).val().length;
   const maxChar = 140
-  console.log(maxChar-charLength); 
+  charLimitCount = maxChar - charLength;
+  if (charLimitCount < 0) {
+    $('.counter').addClass('overcount');
+  }
+  if (charLimitCount > 0) {
+    $('.counter').removeClass('overcount');
+  }
+  $('.counter').text(charLimitCount);
 };
 
-const countingChars = function() {
-  const charLength = $(this).length;
-  const maxChar = 140
-  console.log(maxChar-charLength);
-}
