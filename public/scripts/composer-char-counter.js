@@ -14,12 +14,14 @@ const onKeyUp = function () {
   const charLength = $(this).val().length;
   const maxChar = 140
   charLimitCount = maxChar - charLength;
+  const counter = $(this).closest(".new-tweet").find(".counter")
+  
   if (charLimitCount < 0) {
-    $('.counter').addClass('overcount');
+    $(counter).addClass('overcount');
   }
   if (charLimitCount > 0) {
-    $('.counter').removeClass('overcount');
+    $(counter).removeClass('overcount');
   }
-  $('.counter').text(charLimitCount);
+  $(counter).text(charLimitCount);
 };
 
