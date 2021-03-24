@@ -8,14 +8,12 @@ $(document).ready(function() {
 
 });
 
-//TO DO: access counter class with traversal instead of directly
 const onKeyUp = function () {
   let charLimitCount;
   const charLength = $(this).val().length;
   const maxChar = 140
   charLimitCount = maxChar - charLength;
   const counter = $(this).closest(".new-tweet").find(".counter")
-  
   if (charLimitCount < 0) {
     $(counter).addClass('overcount');
   }
