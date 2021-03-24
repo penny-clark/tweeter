@@ -1,0 +1,61 @@
+/* this is the main box of the tweet */
+article:hover {
+  box-shadow: 12px 12px 2px 1px #95b2e8;
+}
+
+.tweet {
+border: solid;
+display: flex;
+flex-direction: column;
+align-items: center;
+background-color: #f4f1ec;
+width: 90%;
+}
+
+.tweet-header {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+background-color: #f4f1ec;
+width: 95%;
+}
+
+.user-name {
+  color: #545149;
+  font-weight: 200;
+}
+
+.tweet-header-left {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.tweeter-handle {
+  opacity: 0%;
+  color: gray;
+}
+
+.tweeter-handle:hover {
+  opacity: 100%;
+}
+
+.tweet-content {
+  display: flex;
+  align-items: flex-end;
+  width: 95%;
+}
+
+.tweet-footer {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+border-top: solid;
+width: 95%;
+}
+
+.date-posted {
+  font-size:smaller;
+}
+

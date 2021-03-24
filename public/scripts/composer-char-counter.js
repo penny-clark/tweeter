@@ -8,7 +8,7 @@ $(document).ready(function() {
 
 });
 
-//TO DO: access counter class with recursion instead of directly
+//TO DO: access counter class with traversal instead of directly
 const onKeyUp = function () {
   let charLimitCount;
   const charLength = $(this).val().length;

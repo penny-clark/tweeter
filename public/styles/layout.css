@@ -21,7 +21,6 @@ body {
   font-family: 'Source Sans Pro', sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 100%
 
 }
@@ -36,4 +35,5 @@ body {
   display: flex;
   flex-direction: column;
   align-self: center;
+  justify-content: space-around;
  }
