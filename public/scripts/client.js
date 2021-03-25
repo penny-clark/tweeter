@@ -36,25 +36,22 @@ $(document).ready(function() {
 const loadTweets = function() {
   $.ajax('/tweets', { method: 'GET' })
   .then(function (result) {
-    console.log("these are tweets that were got", result)
     renderTweets(result);
-})};
+  })};
+  loadTweets();
 
-loadTweets();
-
-$('form').submit(function (event) {
-  event.preventDefault()
-  console.log("hi");
-  let result = $(this).serialize()
-  console.log(result, "this is the result")
-  $.ajax("/tweets", result, { method: 'POST', dataType: "json"})
-  .then(function () {
-  console.log('Success: ', result);
-  //form reset solutions from https://stackoverflow.com/questions/10633605/clear-form-values-after-submission-ajax
-  $('form')[0].reset();
-  //counter reset solution from https://stackoverflow.com/questions/20891451/resetting-a-jquery-input-field-character-countdown-after-the-form-has-been-submi/20891555
-  $('.counter').text('140');
-  });
-});
-
+ 
+    $('form').submit(function (event) {
+      event.preventDefault()
+      let tweetText = $(this).serialize();
+      if (tweetText.length > 145) return alert("too long");
+      if (tweetText.length < 6) return alert("too short");
+      $.ajax("/tweets", tweetText, { method: 'POST'})
+      .then(function (tweetText) {
+        loadTweets();
+        console.log('Success: ', tweetText);
+        $('form')[0].reset();
+        $('.counter').text('140');
+      });
+    });
 });
