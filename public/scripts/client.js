@@ -27,6 +27,8 @@ $(document).ready(function() {
   }
 
   const renderTweets = function(tweets) {
+    console.log(tweets)
+    $('.tweet-container').empty();
     for (const tweet of tweets) {
       let $tweet = createTweetElement(tweet);
       $('.tweet-container').append($tweet);
@@ -35,8 +37,8 @@ $(document).ready(function() {
 
 const loadTweets = function() {
   $.ajax('/tweets', { method: 'GET' })
-  .then(function (result) {
-    renderTweets(result);
+  .then(function (tweets) {
+    renderTweets(tweets);
   })};
   loadTweets();
 
@@ -44,12 +46,14 @@ const loadTweets = function() {
     $('form').submit(function (event) {
       event.preventDefault()
       let tweetText = $(this).serialize();
+      console.log(tweetText.length, "tweet text length")
+      console.log(tweetText)
       if (tweetText.length > 145) return alert("too long");
       if (tweetText.length < 6) return alert("too short");
-      $.ajax("/tweets", tweetText, { method: 'POST'})
+      $.ajax( "/tweets", {data: tweetText, method: 'POST'})
       .then(function (tweetText) {
-        loadTweets();
         console.log('Success: ', tweetText);
+        loadTweets()
         $('form')[0].reset();
         $('.counter').text('140');
       });
