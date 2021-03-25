@@ -57,10 +57,16 @@ const loadTweets = function() {
       console.log(content)
       let tweetText = $(this).serialize();
       let textLength = $('#tweet-text').val().length
-      if (textLength > 140) return alert("too long");
-      if (textLength < 1) return alert("too short");
+      if (textLength > 140) {
+        //help with getting the animation to work: https://stackoverflow.com/questions/24969024/jquery-slidedown-on-newly-appended-div
+        return $('.error-container').empty().append("Error: Your tweet is over the character limit").hide().addClass('error-visible').slideDown()
+      };
+      if (textLength < 1) {
+        return $('.error-container').empty().append("Error: Please enter some text").hide().addClass('error-visible').slideDown();
+      } 
       $.ajax( "/tweets", {data: tweetText, method: 'POST'})
       .then(function (tweetText) {
+        $('.error-container').removeClass('error-visible').empty();
         console.log('Success: ', tweetText);
         loadTweets()
         $('form')[0].reset();
