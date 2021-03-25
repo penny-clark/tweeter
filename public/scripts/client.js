@@ -5,6 +5,20 @@
 */
 // Test / driver code (temporary). Eventually will get this from the server.
 $(document).ready(function() {
+  $('form').on("submit", function (event) {
+    event.preventDefault()
+    let result = $(this).serialize()
+    $.ajax("/tweets", result, { method: 'POST' })
+    .then(function (result) {
+    console.log('Success: ', result);
+    //form reset solutions from https://stackoverflow.com/questions/10633605/clear-form-values-after-submission-ajax
+    $('form')[0].reset();
+    //counter solution from https://stackoverflow.com/questions/20891451/resetting-a-jquery-input-field-character-countdown-after-the-form-has-been-submi/20891555
+    $('.counter').text('140');
+    });
+  });
+
+
 
 const data = [
   {

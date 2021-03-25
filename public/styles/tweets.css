@@ -50,10 +50,6 @@ width: 95%;
   color: gray;
 }
 
-/* .tweeter-handle:hover {
-  opacity: 100%;
-} */
-
 .tweet-content {
   display: flex;
   align-items: flex-end;
