@@ -32,7 +32,7 @@ $(document).ready(function() {
     $('.tweet-container').empty();
     for (const tweet of tweets) {
       let $tweet = createTweetElement(tweet);
-      $('.tweet-container').append($tweet);
+      $('.tweet-container').prepend($tweet);
     }
   }
 
