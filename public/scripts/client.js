@@ -6,6 +6,13 @@
 
 // Test / driver code (temporary). Eventually will get this from the server.
 $(document).ready(function() {
+  //helper function
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
 
   const createTweetElement = function(tweetObject) {
     let $tweet = `<article class="tweet">
@@ -17,7 +24,7 @@ $(document).ready(function() {
     <p class="tweeter-handle">${tweetObject.user.handle}</p>
     </header>
     <div class="tweet-content">
-    <p>${tweetObject.content.text}</p>
+      <p>${escape(tweetObject.content.text)}</p>
     </div>
     <footer class="tweet-footer">
     <output name="date-posted" class="date-posted">${tweetObject.created_at}</output>
@@ -46,10 +53,12 @@ const loadTweets = function() {
  
     $('form').submit(function (event) {
       event.preventDefault();
+      let content = $(this).val();
+      console.log(content)
       let tweetText = $(this).serialize();
       let textLength = $('#tweet-text').val().length
       if (textLength > 140) return alert("too long");
-      if (tweetText.length < 6) return alert("too short");
+      if (textLength < 1) return alert("too short");
       $.ajax( "/tweets", {data: tweetText, method: 'POST'})
       .then(function (tweetText) {
         console.log('Success: ', tweetText);
