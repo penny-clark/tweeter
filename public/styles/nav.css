@@ -11,3 +11,13 @@ nav {
   top: 0;
   width: 100%;
 }
+
+.nav-bar-arrows {
+  width: 20px;
+}
+
+.nav-bar-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
