@@ -3,6 +3,7 @@
 * jQuery is already loaded
 * Reminder: Use (and do all your DOM work in) jQuery's document ready function
 */
+
 // Test / driver code (temporary). Eventually will get this from the server.
 $(document).ready(function() {
 
@@ -44,11 +45,10 @@ const loadTweets = function() {
 
  
     $('form').submit(function (event) {
-      event.preventDefault()
+      event.preventDefault();
       let tweetText = $(this).serialize();
-      console.log(tweetText.length, "tweet text length")
-      console.log(tweetText)
-      if (tweetText.length > 145) return alert("too long");
+      let textLength = $('#tweet-text').val().length
+      if (textLength > 140) return alert("too long");
       if (tweetText.length < 6) return alert("too short");
       $.ajax( "/tweets", {data: tweetText, method: 'POST'})
       .then(function (tweetText) {
