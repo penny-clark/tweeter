@@ -1,7 +1,7 @@
 nav {
-  font-family: 'Source Sans Pro', sans-serif;
   font-family: 'Bungee', sans-serif;
-  background-color: #4056A1;
+  background-color: #997c34;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
   color: #FFFFFF;
   height: 120px;
   padding: 1.5em;
@@ -12,12 +12,25 @@ nav {
   width: 100%;
 }
 
-.nav-bar-arrows {
-  width: 20px;
-}
-
 .nav-bar-right {
+  font-family: 'Source Sans Pro', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.nav-bar-arrows {
+  font-family: sans-serif;
+  transform: rotate(90deg);
+  padding-top: 5px;
+  width: 1em;
+  color: red;
+}
+
+/* Desktop design */
+@media only screen and (min-width: 1024px) {
+  nav {
+    background: none;
+    background-color: #4056A1;
+  }
 }

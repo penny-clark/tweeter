@@ -23,6 +23,7 @@
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
   </head>
 
   <body>
@@ -30,8 +31,8 @@
     <nav>
       <span>tweeter</span>
       <div class= "nav-bar-right">
-      <span style= "font-family: Source Sans Pro">Write a new tweet</span>
-      <img class="nav-bar-arrows" src="images/red-arrow-icon.png">
+      <span>Write a new tweet</span>
+      <span class="nav-bar-arrows"> >> </span>
       </div>
     </nav>
 
@@ -48,7 +49,6 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
         <div class="error-container"></div>
         <form action="/tweets" method="POST">
           <label for="tweet-text">What are you humming about?</label>
