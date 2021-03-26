@@ -8,9 +8,7 @@ Features of this version of Tweeter include a character counter that turns red w
 
 Tweeter will assign your tweets to random profiles that will populate your feed. Be your own best friends!
 
-And - sorry Harold! - Tweeter is Cross-Site Scripting safe. 
-
-
+Tweeter is Cross-Site Scripting safe.
 
 ## Dependencies
 
@@ -18,3 +16,10 @@ And - sorry Harold! - Tweeter is Cross-Site Scripting safe.
 - Node 5.10.x or above
 - Body-parser
 - Chance
+
+## Screenshots
+
+!["Screenshot of homepage with desktop layout"](https://github.com/penny-clark/tweeter/blob/master/docs/homepage-desktop-scale.png)
+!["Screenshot of homepage with desktop layout"](https://github.com/penny-clark/tweeter/blob/master/docs/homepage-tablet-scale.png)
+!["Tweet appearance on hover"](https://github.com/penny-clark/tweeter/blob/master/docs/tweet-on-hover.png)
+!["Sorry Harold! Not today!"](https://github.com/penny-clark/tweeter/blob/master/docs/XSS-safe.png)
