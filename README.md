@@ -22,10 +22,10 @@ Tweeter is Cross-Site Scripting safe.
 Tablet layout 
 !["Screenshot of homepage with tablet layout"](https://github.com/penny-clark/tweeter/blob/master/docs/homepage-tablet-scale.png)
 
-Desktop layour & example of over-limit Tweet behaviour
+Desktop layout & example of over-limit tweet behaviour
 !["Screenshot of homepage with desktop layout"](https://github.com/penny-clark/tweeter/blob/master/docs/homepage-desktop-scale.png)
 
-Appearance of Tween on hover
+Appearance of tweet on hover
 !["Tweet appearance on hover"](https://github.com/penny-clark/tweeter/blob/master/docs/tweet-on-hover.png)
 
 Cross-Site Scripting safe
