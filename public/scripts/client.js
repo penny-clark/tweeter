@@ -13,6 +13,8 @@ $(document).ready(function() {
     return div.innerHTML;
   }
 
+  //HELPER FUNCTION
+  //sets "days passed" text for createTweetElement
   const daysPassed = function (timeCreated) {
     const dateCreated = new Date(timeCreated);
     const currentDay = new Date();
@@ -40,7 +42,7 @@ $(document).ready(function() {
     </div>
     <footer class="tweet-footer">
     <output name="date-posted" class="date-posted">${daysPassed(tweetObject.created_at)}</output>
-    <img src="images/social-buttons-temp.png" alt="social-buttons">
+    <img class="social-buttons" src="images/social-buttons-temp.png" alt="social-buttons">
     </footer>
     </article>`;
     return $tweet;
