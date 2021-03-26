@@ -13,6 +13,18 @@ $(document).ready(function() {
     return div.innerHTML;
   }
 
+  const daysPassed = function (timeCreated) {
+    const dateCreated = new Date(timeCreated);
+    const currentDay = new Date();
+    const timePassedInDays = Math.floor(((currentDay - dateCreated) / 86400000))
+    if (timePassedInDays < 1) {
+      return `Today`;
+    } 
+    if (timePassedInDays === 1) {
+      return `1 day ago`;
+    }
+    return `${timePassedInDays} days ago`
+  }
 
   const createTweetElement = function(tweetObject) {
     let $tweet = `<article class="tweet">
@@ -27,7 +39,7 @@ $(document).ready(function() {
       <p>${escape(tweetObject.content.text)}</p>
     </div>
     <footer class="tweet-footer">
-    <output name="date-posted" class="date-posted">${tweetObject.created_at}</output>
+    <output name="date-posted" class="date-posted">${daysPassed(tweetObject.created_at)}</output>
     <img src="images/social-buttons-temp.png" alt="social-buttons">
     </footer>
     </article>`;

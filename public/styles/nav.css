@@ -14,9 +14,14 @@ nav {
 
 .nav-bar-right {
   font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.bold-text {
+  font-weight: 700;
 }
 
 .nav-bar-arrows {
