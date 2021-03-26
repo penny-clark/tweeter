@@ -3,13 +3,18 @@ nav {
   background-color: #997c34;
   background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
   color: #FFFFFF;
-  height: 120px;
+  max-height: 120px;
   padding: 1.5em;
   display: flex;
   justify-content: space-between;
   position: fixed;
   top: 0;
   width: 100%;
+}
+
+.new-tweet-jump-link {
+  color: #FFFFFF;
+  text-decoration: none;
 }
 
 .nav-bar-right {

@@ -1,6 +1,6 @@
-/* .container {
-  padding-top: 1em;
-} */
+html {
+  scroll-padding-top: 120px;
+}
 
 .new-tweet {
   display: flex;
